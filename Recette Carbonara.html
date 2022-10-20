@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recette de la Carbonara</title>
+</head>
+<body>
+<ol id = "list" ></ol>
+<p id = "sentence" ></p>
+    <script>
+
+const RECETTE = new Array();
+RECETTE[0] = "Pates";
+RECETTE[1] = "Oeuf";
+RECETTE[2] = "Sel";
+RECETTE[3] = "Poivre";
+RECETTE[4] = "Lardon";
+RECETTE[5] = "Oignon";
+RECETTE [6] = "Parmesan";
+
+let numberOfIngredients = RECETTE.length;
+let listOfIngredients = RECETTE.toString();
+
+for (const displayIngredients of RECETTE.sort()){
+    console.log(displayIngredients)
+    const ingredients = document.createElement("li");
+    ingredients.innerText = displayIngredients;
+    document.getElementById('list').appendChild(ingredients);
+}
+
+document.getElementById("sentence").innerHTML = "<p>Pour ma recette de la carbonara il me faut " + numberOfIngredients + " ingrédients.</p>" 
+
+    </script>
+
+
+</body>
+</html>
