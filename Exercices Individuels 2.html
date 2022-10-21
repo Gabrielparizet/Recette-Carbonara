@@ -11,15 +11,23 @@
 
     <script>
 
-        let givenNumber;
+        /*let givenNumber;
         function chooseNumber() {
-            givenNumber = prompt ("Please choose a number", "");
+            givenNumber = prompt ("Please choose a number", ""); // STEP 1
             return givenNumber;
-        }
+        }*/
 
-        function didIWin(number) {
+        let number1
+        function numberPlayer1() {
+            number1 = prompt ("Choose a number between 0 and 50.", "");
+            console.log(number1);
+            return number1;
+        }
+    
+        let guessingNumber = 32;
+        function didIWin(number1) {
             let checking = true;
-            if (number == 22) {
+            if (guessingNumber == number1) {
                 checking = true;
             }
             else {
@@ -29,21 +37,24 @@
         }
 
         function gamePlay() {
-            let chosenNumber = chooseNumber();
+            let chosenNumber = numberPlayer1();
             let answer = didIWin(chosenNumber);
       
 
             if (answer == true){
 
-                document.body.innerHTML += "<h1>" + "You have won. The game is over" + "</h1>";
+                document.body.innerHTML += "<h1>" + "You have won. The game is over." + "</h1>";
             }
             else {
-                console.log("answer = false" + chosenNumber + answer);
-                alert("Wrong answer");
+                alert("Wrong answer.");
                 gamePlay();   
             }
         }
         gamePlay();
+
+
+
+
 
 
 
