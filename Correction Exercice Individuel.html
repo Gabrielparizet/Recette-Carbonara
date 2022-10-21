@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        function player1 (){
+            return prompt ("chose a number between 0 and 50.")
+        }
+        function didIWin (numberPlayer1) {
+           let number2 = prompt("Joueur 2, donne un nombre")
+            console.log("number2 " + number2)
+            console.log("numberPlayer1 " + numberPlayer1)
+            if (number2 < numberPlayer1) {
+                alert("raté !mon nombre est Plus Grand")
+                return false;
+            }
+            else if (number2 > numberPlayer1) {
+                alert("raté! mon nombre est Plus Petit")
+                return false;
+            }
+            else{
+                alert("Bravo!!! Vous avez deviné le nombre")
+                return true;
+            }
+        }
+
+        function gamePlay(numberGamePlay){
+            if( !didIWin(numberGamePlay)){
+                gamePlay(numberGamePlay)
+            }
+        }
+
+        let number1 = player1()
+        console.log(number1)
+        let answer2 = didIWin(number1)
+        console.log("réponse2 : " + answer2)
+        gamePlay(number1) 
+        
+
+    </script>
+
+    
+
+</body>
+</html>
