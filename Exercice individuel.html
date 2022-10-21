@@ -10,15 +10,31 @@
     <h2> </h2>
     <h3> </h3>
     <script>
-        let name = "Bonjour " + prompt ("What is your name?", "") + ".";
+        function askName() {
+            let name = "Bonjour " + prompt ("What is your name?", "") + ".";
         console.log(name);
         document.body.innerHTML += "<h2>" + name + "</h2>";
+        }
 
-        let birthYear = prompt ("What year were you born in?", "");
-        let age = 2022 - birthYear
-        console.log(age);
-        document.body.innerHTML += "<h3>" + "You are " + age + " years old." + "</h3>";
+        function askBirthYear() {
+            let birthYear = prompt ("What year were you born in?", "");
+            let birthMonth = prompt ("What month were you born in?", "");
+        let age = 2022 - birthYear;
+        let october = 10;
+        let month;
+        if (birthMonth <= october){
+            month = october - birthMonth;
+        }
+        else {
+            month = october + (12 - birthMonth);
+        }
+        console.log(age)
+        console.log(month);
+        document.body.innerHTML += "<h3>" + "You are " + age + " years old and " + month + " months." + "</h3>";
+        }
 
+        askName()
+        askBirthYear()
 
     </script>
 </body>
